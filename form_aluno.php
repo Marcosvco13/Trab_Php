@@ -1,13 +1,12 @@
 <?php
 require_once('./class/class.validacoesDeFormaulario.php');
 require_once("header.php");
-require_once("./class.ValidacaoLogin.php");
-require_once("./class.Form_Aluno.php");
+#require_once("./class.ValidacaoLogin.php");
+require_once("./class/class.Form_Aluno.php");
 
 $Form_Aluno = new Form_Aluno();
-
-$validar = new ValidarLogin();
-$validar->revalidarLogin();
+#$validar = new ValidarLogin();
+#$validar->revalidarLogin();
 
 ?>
 
@@ -25,7 +24,7 @@ $validar->revalidarLogin();
                 </tr>
 
                 <?php
-                $rows = listarAlunos();
+                $rows = $Form_Aluno->listarAlunos();
 
                 foreach ($rows as $registro) {
                     echo "<tr>";
@@ -39,7 +38,7 @@ $validar->revalidarLogin();
         <div>
             <?php
             if (isset($_GET['alterarid'])) {
-                $aluno = listarAluno($_GET['alterarid']);
+                $aluno = $Form_Aluno->listarAluno($_GET['alterarid']);
             ?>
                 <form action="form_aluno.php" method="POST">
                     <input type="hidden" name="idaluno" value="<?php echo $aluno[0]['idaluno'] ?>" />
@@ -54,17 +53,17 @@ $validar->revalidarLogin();
 
             if (isset($_POST['comando']) && $_POST['comando'] == 'Alterar') {
                 echo "Comandos para alterar o aluno ";
-                alterarAluno($_POST['idaluno'], $_POST['nmaluno']);
+                $Form_Aluno->alterarAluno($_POST['idaluno'], $_POST['nmaluno']);
                 header("location:form_aluno.php?comando=alteracaook");
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Excluir') {
                 echo "Comandos para excluir o aluno";
-                excluirAluno($_POST['idaluno']);
+                $Form_Aluno->excluirAluno($_POST['idaluno']);
                 header("location:form_aluno.php?comando=excluirok");
             } else if (isset($_POST['comando']) && $_POST['comando'] == 'Incluir') {
                 echo "Comandos para incluir o aluno";
                 if (trim($_POST['nmaluno']) != '') {
                     echo htmlspecialchars($_POST['nmaluno']);
-                    incluirAluno(htmlspecialchars($_POST['nmaluno']));
+                    $Form_Aluno->incluirAluno(htmlspecialchars($_POST['nmaluno']));
                     header("location:form_aluno.php?comando=incluirok");
                 }
             }

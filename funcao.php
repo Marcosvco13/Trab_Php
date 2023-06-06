@@ -1,22 +1,12 @@
 <?php
 
-/*Parte nova*/
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
-$user = 'root';
-$password = '';
-$database = 'aedb_quinto';
-$hostname = "localhost";
-
 function dumpF($string)
 {
     echo "<pre>";
     var_dump($string);
     echo "</pre>";
 }
-
-/*Fim da parte nova*/
-
+/*
 function listarAlunos()
 {
     global $user, $password, $database, $hostname;
@@ -125,6 +115,7 @@ function incluirAluno($nmaluno)
 
     return (mysqli_affected_rows($con) == 1);
 }
+*/
 
 /* grupo de funções para manipulação dos logins */
 function listarLogins()

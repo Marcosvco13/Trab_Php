@@ -1,7 +1,6 @@
 <?php
 class TratamentoDeInput
 {
-
     private $caracteresIndesejaveis = array('"', "'", '<', '>', '--');
 
     protected function valorInvalido($informacao)

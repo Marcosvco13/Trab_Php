@@ -15,7 +15,7 @@ class ValidacoesDeFormulario extends TratamentoDeInput
         if ($this->valorInvalido($nome)) return false;
         if (strlen($nome) < self::_TAMANHOMINNOME || strlen($nome) > self::_TAMANHOMAXNOME) return false;
 
-        return true;
+        return "ok";
     }
 
     public function validarEmail($email)
@@ -25,7 +25,7 @@ class ValidacoesDeFormulario extends TratamentoDeInput
         if (empty($email) == true) return false;
         if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) return false;
 
-        return true;
+        return "ok";
     }
 
     public function validarSenha($senha)
@@ -34,7 +34,7 @@ class ValidacoesDeFormulario extends TratamentoDeInput
         if (strlen($senha) < self::_TAMANHOMINSENHA || strlen($senha) > self::_TAMANHOMAXSENHA) return false;
         if (empty($senha) == true) return false;
 
-        return true;
+        return "ok";
     }
 }
 

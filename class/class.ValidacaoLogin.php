@@ -6,9 +6,9 @@ class ValidarLogin extends BancoDeDados
 {
     public function validarLogin($dslogin, $dssenha)
     {
-        $sql = $this->retornaArray(" SELECT * " . " FROM login l " . " WHERE l.dslogin= " . $dslogin . " and l.dssenha = " . $dssenha);
+        $sql2 = $this->retornaArray(" SELECT * FROM login l WHERE l.dslogin= '" . $dslogin . "' and l.dssenha = '" . md5($dssenha) . "'");
 
-        return $sql;
+        return $sql2;
     }
 
     public function revalidarLogin()
@@ -37,15 +37,3 @@ class ValidarLogin extends BancoDeDados
 }
 
 $validarLogin = new ValidarLogin();
-
-$puta = $validarLogin->validarLogin('admin', 'teste');
-
-dumpF($puta);
-
-#$bd = new BancoDeDados('10.0.0.1', 'admin', '123', 'aedb');
-#$bd2 = new BancoDeDados();
-#dumpF($bd);
-#dumpf($bd2);
-#$variavel = $bd2->retornaArray("select * from login");
-
-#dumpf($variavel);
