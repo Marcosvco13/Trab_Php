@@ -18,19 +18,19 @@ class Form_Aluno extends BancoDeDados
 
     public function alterarAluno($idaluno, $nmaluno)
     {
-        $alterAluno = $this->retornaArray(" update aluno set nmaluno = '" . $nmaluno . "' where idaluno = " . $idaluno);
+        $alterAluno = $this->executar(" update aluno set nmaluno = '" . $nmaluno . "' where idaluno = " . $idaluno);
         return $alterAluno;
     }
 
     public function excluirAluno($idaluno)
     {
-        $excluirAluno = $this->retornaArray(" delete from aluno where idaluno = " . $idaluno);
+        $excluirAluno = $this->executar(" delete from aluno where idaluno = " . $idaluno);
         return $excluirAluno;
     }
 
     public function incluirAluno($nmaluno)
     {
-        $incluiAluno = $this->retornaArray(" insert into aluno(nmaluno) values ('" . $nmaluno . "')");
+        $incluiAluno = $this->executar(" insert into aluno(nmaluno) values ('" . $nmaluno . "')");
         return $incluiAluno;
     }
 }

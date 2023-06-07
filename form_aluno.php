@@ -1,12 +1,12 @@
 <?php
 require_once('./class/class.validacoesDeFormaulario.php');
 require_once("header.php");
-#require_once("./class.ValidacaoLogin.php");
+require_once("./class/class.ValidacaoLogin.php");
 require_once("./class/class.Form_Aluno.php");
 
 $Form_Aluno = new Form_Aluno();
-#$validar = new ValidarLogin();
-#$validar->revalidarLogin();
+$validar = new ValidarLogin();
+$validar->revalidarLogin();
 
 ?>
 

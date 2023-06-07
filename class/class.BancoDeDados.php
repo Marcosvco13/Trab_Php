@@ -51,9 +51,17 @@ class BancoDeDados
 
     public function retornaArray($query)
     {
+
         $this->resultado = $this->executarConsulta($query);
         $rows = mysqli_fetch_all($this->resultado, MYSQLI_ASSOC);
-
         return $rows;
+    }
+
+    public function executar($teste)
+    {
+        $this->resultado = $this->executarConsulta($teste);
+        $row = $this->resultado;
+        MYSQLI_ASSOC;
+        return $row;
     }
 }
