@@ -11,7 +11,7 @@ class Form_Login extends BancoDeDados
 
     public function listarAlunosNaoRelacionados()
     {
-        $ListAlunos = $this->retornaArray(" select * from aluno a where a.idaluno not in (select l.idaluno from login l where l.idaluno = a.idaluno");
+        $ListAlunos = $this->retornaArray(" select * from aluno a where a.idaluno not in (select l.idaluno from login l where l.idaluno = a.idaluno)");
         return $ListAlunos;
     }
 

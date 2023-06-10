@@ -42,6 +42,7 @@ $validar = new ValidarLogin();
         if (isset($_GET['alterar'])) {
         ?>
             <hr>
+
             ***Área de manutenção
             <hr>
             <form action="form_login.php" method="post">
@@ -56,6 +57,7 @@ $validar = new ValidarLogin();
             </form>
         <?php } ?>
         <hr>
+
         *** Área de inclusão do registro
         <hr>
         <form action="form_login.php" method="post">
@@ -63,9 +65,9 @@ $validar = new ValidarLogin();
             DSSENHA: <input name="dssenha" type="password" maxlength="20" />
             <select name="idaluno">
                 <?php
-                $registros = $Form_login->listarAlunosNaoRelacionados();
+                $registro = $Form_login->listarAlunosNaoRelacionados();
 
-                foreach ($registros as $linha) {
+                foreach ($registro as $linha) {
                     echo "<option value='" . $linha['idaluno'] . "'>" . $linha['nmaluno'] . "</option>";
                 }
                 ?>
