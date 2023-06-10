@@ -10,13 +10,14 @@ $validar = new ValidarLogin();
 ?>
 
 <body>
-
+    <link rel="stylesheet" type="text/css" href="css/form_login.css">
     <?php require_once("menu.php") ?>
 
     <div class="content">
+        <h2>Manutenção de Logins</h2>
         <br />
         <table>
-            <tr>
+            <tr class="titulo">
                 <td>Login</td>
                 <td>Senha</td>
                 <td>ID do Aluno</td>
@@ -42,27 +43,28 @@ $validar = new ValidarLogin();
         if (isset($_GET['alterar'])) {
         ?>
             <hr>
-
-            ***Área de manutenção
+            Área de manutenção:
             <hr>
+
             <form action="form_login.php" method="post">
-                DSLOGIN: <input name="dslogin" type="text" maxlength="20" readonly value="<?php echo $_GET['alterar'] ?>">
-                DSSENHA: <input name="dssenha" type="password" maxlength="20" value="">
+                Login: <input name="dslogin" type="text" maxlength="20" readonly value="<?php echo $_GET['alterar'] ?>">
+                Senha: <input name="dssenha" type="password" maxlength="20" value="">
                 <?php
                 if ($_GET['alterar'] != 'admin') {
-                    echo '<input type="submit" name="comando" value="ExcluirAcesso" />';
+                    echo '<input type="submit" name="comando" value="Excluir Acesso" />';
                 }
                 ?>
-                <input type="submit" name="comando" value="AlterarSenha" />
+                <input type="submit" name="comando" value="Alterar Senha" />
             </form>
         <?php } ?>
+
+        <hr>
+        Inclur Novo Registro:
         <hr>
 
-        *** Área de inclusão do registro
-        <hr>
         <form action="form_login.php" method="post">
-            DSLOGIN: <input name="dslogin" type="text" maxlength="20" />
-            DSSENHA: <input name="dssenha" type="password" maxlength="20" />
+            Login: <input name="dslogin" type="text" maxlength="20" />
+            Senha: <input name="dssenha" type="password" maxlength="20" />
             <select name="idaluno">
                 <?php
                 $registro = $Form_login->listarAlunosNaoRelacionados();

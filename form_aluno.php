@@ -15,10 +15,10 @@ $validar->revalidarLogin();
     <?php require_once("menu.php") ?>
 
     <div class="content">
-        <h2>Manutenção de aluno</h2>
+        <h2>Manutenção de Alunos</h2>
         <div>
             <table>
-                <tr>
+                <tr class="titulo">
                     <td>ID do Aluno</td>
                     <td>Nome do Aluno</td>
                 </tr>
@@ -59,7 +59,7 @@ $validar->revalidarLogin();
                 echo "Comandos para excluir o aluno";
                 $Form_Aluno->excluirAluno($_POST['idaluno']);
                 header("location:form_aluno.php?comando=excluirok");
-            } else if (isset($_POST['comando']) && $_POST['comando'] == 'Incluir') {
+            } else if (isset($_POST['comando']) && $_POST['comando'] == 'Cadastrar') {
                 echo "Comandos para incluir o aluno";
                 if (trim($_POST['nmaluno']) != '') {
                     echo htmlspecialchars($_POST['nmaluno']);
@@ -77,7 +77,7 @@ $validar->revalidarLogin();
 
             <form action="form_aluno.php" method="POST">
                 <input type="text" name="nmaluno" value="" maxlength="150" />
-                <input type="submit" value="Incluir" name="comando">
+                <input type="submit" value="Cadastrar" name="comando">
             </form>
 
             <?php
