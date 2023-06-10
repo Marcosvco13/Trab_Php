@@ -11,7 +11,7 @@ $validar->revalidarLogin();
 ?>
 
 <body>
-
+    <link rel="stylesheet" type="text/css" href="css/form_aluno.css">
     <?php require_once("menu.php") ?>
 
     <div class="content">
@@ -19,8 +19,8 @@ $validar->revalidarLogin();
         <div>
             <table>
                 <tr>
-                    <td>IDLAUNO</td>
-                    <td>NMALUNO</td>
+                    <td>ID do Aluno</td>
+                    <td>Nome do Aluno</td>
                 </tr>
 
                 <?php

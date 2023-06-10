@@ -17,10 +17,10 @@ $validar = new ValidarLogin();
         <br />
         <table>
             <tr>
-                <td>dslogin</td>
-                <td>dssenha</td>
-                <td>idaluno</td>
-                <td>nmaluno</td>
+                <td>Login</td>
+                <td>Senha</td>
+                <td>ID do Aluno</td>
+                <td>Nome do Aluno</td>
             </tr>
             <?php
 

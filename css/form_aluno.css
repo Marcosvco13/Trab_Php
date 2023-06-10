@@ -1,0 +1,33 @@
+table {
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #333;
+}
+
+th {
+    background-color: #333;
+    color: #FFF;
+    width: 40%; /* Ajuste o valor conforme necessário */
+}
+
+td {
+    width: 60%; /* Ajuste o valor conforme necessário */
+}
+
+td {
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    color: #000;
+}
