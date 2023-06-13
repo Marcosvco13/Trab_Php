@@ -6,7 +6,7 @@ class Form_Notas extends BancoDeDados
 {
     public function ListarNotas()
     {
-        $arrayNotas = $this->retornaArray(" select * from avaliacao");
+        $arrayNotas = $this->retornaArray(" select * from avaliacao n left outer join aluno a on n.idaluno = a.idaluno left outer join disciplina d on n.iddisciplina = d.iddisciplina ");
         return $arrayNotas;
     }
     public function ListarNota($idavaliacao)
@@ -15,17 +15,17 @@ class Form_Notas extends BancoDeDados
 
         return $arrayNota;
     }
-    public function AlterarMateria($idavaliacao, $nota)
+    public function alterarNota($idavaliacao, $nota)
     {
         $alterNota = $this->executar(" update avaliacao set nota = '" . $nota . "' where idavaliacao = " . $idavaliacao);
         return $alterNota;
     }
-    public function excluirDisciplina($idavaliacao)
+    public function excluirNota($idavaliacao)
     {
         $excluirNota = $this->executar(" delete from avaliacao where idavaliacao = " . $idavaliacao);
         return $excluirNota;
     }
-    public function incluirDisciplina($nota, $idaluno, $iddisciplina)
+    public function incluirNota($nota, $idaluno, $iddisciplina)
     {
         $incluirNota = $this->executar(" insert into avaliacao(idaluno, iddisciplina, nota) values ('" . $idaluno . "', '" . $iddisciplina . "', '" . $nota . "')");
         return $incluirNota;
