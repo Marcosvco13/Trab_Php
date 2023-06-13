@@ -39,7 +39,7 @@ if (count($validarlog->validarLogin($login, $senha)) == 1) {
 
     $_SESSION["token"] = $token;
 
-    header("location:welcome.php");
+    header("location:form_inicial.php");
 } else {
     header("location:index.php?erro=NAOLOCALIZADO");
 }
