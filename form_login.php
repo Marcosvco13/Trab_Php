@@ -14,6 +14,7 @@ $validar = new ValidarLogin();
     <?php require_once("menu.php") ?>
 
     <div class="content">
+
         <h2>Manutenção de Logins</h2>
         <br />
         <table>

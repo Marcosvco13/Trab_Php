@@ -1,9 +1,11 @@
+
 table {
     width: 60%;
     margin: 0 auto;
     border-collapse: collapse;
     text-align: center;
     white-space: nowrap;
+    background-color: ;
 }
 
 th, td {
